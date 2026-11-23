@@ -1,6 +1,20 @@
 # Iris Dataset Exploration
 
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-F7931E.svg)](https://scikit-learn.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-11557c.svg)](https://matplotlib.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 An exploration of the classic Iris dataset, asking a simple question: can two species of iris be told apart with just two measurements — and which measurements do it best?
+
+## Key Results
+
+- **150 samples, 4 features, 3 species** — the full Iris dataset, loaded from scikit-learn (`datasets.load_iris()`), with shape `(150, 4)`.
+- **Two species compared head to head** — Iris setosa (class 0) vs. Iris virginica (class 2), reduced from 4 dimensions to 2 at a time, shape `(150, 2)`.
+- **Sepal features separate the species** — Sepal Length vs. Sepal Width shows a clear distinction with minimal overlap, so a straight line could effectively separate the two species.
+- **Petal features separate them even better** — Petal Length vs. Petal Width gives two distinct clusters with minimal overlap and a higher degree of linear separability, making petal dimensions the more effective features for distinguishing Setosa from Virginica.
+- **Simple linear classifiers should do well** — both feature pairs are nearly linearly separable, so a linear model using just two measurements should achieve high accuracy.
 
 ## The Dataset
 
@@ -35,11 +49,15 @@ This exploration focuses on **Setosa (class 0) vs. Virginica (class 2)**.
 
 ![Sepal Length vs. Sepal Width](plots/sepal_length_vs_width.jpg)
 
+*Setosa (blue) vs. Virginica (orange) on sepal dimensions — clear distinction with minimal overlap.*
+
 Setosa and Virginica form a clear distinction with minimal overlap — a straight line could effectively separate them in this two-dimensional space, so simple linear classifiers should perform well using only these two features.
 
 ### Petal Length vs. Petal Width
 
 ![Petal Length vs. Petal Width](plots/petal_length_vs_width.jpg)
+
+*Setosa (blue) vs. Virginica (orange) on petal dimensions — two distinct clusters, even cleaner separation than the sepal pair.*
 
 The petal dimensions separate the species **even more clearly**: two distinct clusters with minimal overlap and a higher degree of linear separability. Petal length and petal width are the more effective features for distinguishing Setosa from Virginica, and a simple linear classifier using them should achieve high accuracy.
 
@@ -47,6 +65,7 @@ The petal dimensions separate the species **even more clearly**: two distinct cl
 
 ```
 ├── README.md                      # This file
+├── LICENSE                        # MIT License
 ├── iris_exploration.ipynb         # The full analysis notebook
 ├── plots/
 │   ├── sepal_length_vs_width.jpg  # Sepal Length vs. Sepal Width (Setosa vs. Virginica)
